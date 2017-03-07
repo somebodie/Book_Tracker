@@ -20,7 +20,7 @@ User Stories
 - [ ] An additional area of the page will show for user to be able to update and or delete books on bookshelf
 - [ ] Additional partial will act as show page for book.
 - [ ] Upon adding in the book code will be ran that says:
-> `'Have you read this book?' if (yes) {'Will you like to keep the book'; if (yes) {add to book shelf of read} else {'would you like to donate or sell it'; if (sell) {sell array; else if (donate) {donate array} } } } else if (no) {'Will you be reading it?'; if (yes) {add to will read} else if (no) {'would you like to donate or sell it'; if (sell) {sell array; else if (donate) {donate array}}})`
+>> `'Have you read this book?' if (yes) {'Will you like to keep the book'; if (yes) {add to book shelf of read} else {'would you like to donate or sell it'; if (sell) {sell array; else if (donate) {donate array} } } } else if (no) {'Will you be reading it?'; if (yes) {add to will read} else if (no) {'would you like to donate or sell it'; if (sell) {sell array; else if (donate) {donate array}}})`
 
 - - - -
 ## Partials:
