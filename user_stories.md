@@ -26,7 +26,9 @@ User Stories
 ## Partials:
 
 ### *INDEX*
-- [ ] Header and footer
+- [ ] Header
+- [ ] Footer
+- [ ] Contents
 
 ### *HOME*
 - [ ] Inside book
@@ -34,5 +36,10 @@ User Stories
 ### *LIBRARY*
 - [ ] Search books
 
-### *BOOKSHELF*
-- [ ] Saved books
+### *BOOKSHELVES*
+- [ ] All books
+- [ ] Saving books
+  - [ ] To read
+  - [ ] Read
+- [ ] Donate books
+- [ ] Sell books
