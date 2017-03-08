@@ -61,3 +61,4 @@ angular.module('BookTracker')
   function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     // code here
+}
