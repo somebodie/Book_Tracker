@@ -10,14 +10,21 @@ function MainRouter($stateProvider, $urlRouterProvider){
   $stateProvider
   .state('index', {
     url: '/home',
-    templateUrl: '/partials/home.html'
+    templateUrl: '/partials/home.html',
+    controller: 'HomeController as home'
+  })
+  .state('about', {
+    url: '/about',
+    templateUrl: '/partials/about.html'
   })
   .state('library', {
     url: '/library',
-    templateUrl: '/partials/library.html'
+    templateUrl: '/partials/library.html',
+    controller: 'BookController as books'
   })
   .state('books', {
     url: '/books',
-    templateUrl: '/partials/bookshelves.html'
+    templateUrl: '/partials/bookshelves.html',
+    controller: 'BookController as books'
   })
 }
