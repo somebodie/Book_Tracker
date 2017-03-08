@@ -1,4 +1,4 @@
-// All 3 controllers (Home, Auth, Books) are here.
+// All controllers are here.
 angular.module('BookTracker')
   .controller('HomeController', HomeController)
   .controller('AuthController', AuthController)
@@ -50,15 +50,21 @@ angular.module('BookTracker')
         });
     }
 
-    this.signup = signup;
-    this.login = login;
-    this.logout = logout;
+    self.signup = signup;
+    self.login = login;
+    self.logout = logout;
   }
 // https://github.com/ga-students/wdi-remote-matey/blob/abb1fb859e778f542595f4715f6a1385fee98a74/unit_03/w10d02/homework/bucket_list_starter/public/scripts/router.js
   //****************************
-  //3. THIS IS THE Book CONTROLLER
+  //3. THIS IS THE BOOK CONTROLLER
   //****************************
   function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
-    // code here
+    var self = this;
+
+    function newBook() {
+      console.log('THIS IS A NEW BOOK ROUTE!');
+    }
+
+    self.newBook = newBook;
 }

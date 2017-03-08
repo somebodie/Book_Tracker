@@ -20,11 +20,11 @@ function MainRouter($stateProvider, $urlRouterProvider){
   .state('library', {
     url: '/library',
     templateUrl: '/partials/library.html',
-    controller: 'BookController as books'
+    controller: 'BookController as book'
   })
   .state('books', {
     url: '/books',
     templateUrl: '/partials/bookshelves.html',
-    controller: 'BookController as books'
+    controller: 'BookController as book'
   })
 }
