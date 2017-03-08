@@ -1,0 +1,40 @@
+<!-- Reach Goal: Search
+<label class="item item-input">
+  <i class="icon ion-search placeholder-icon"></i>
+  <input type="search" placeholder="Search">
+</label>
+http://ionicframework.com/html5-input-types/#overview
+ -->
+<!-- TODO: Add form to back end -->
+<form class="add" ng-submit- 'book.add' method="post">
+    <label for="title">Title:</label>
+    <input type="text" name="title" ng-model='book.title' placeholder="Cat in The Hat">
+    <label for="author">Author:</label>
+    <input type="text" name="author" ng-model='book.author' placeholder="Dr.Seuss">
+    <label for="genre">Genre:</label>
+    <input type="text" name="genre" ng-model='book.genre' placeholder="Children">
+    <label for="read">Read?
+    <input class="read" type="radio" name="read" value="Yes"> Yes
+    <input class="read" type="radio" name="read" value="Middle"> In the Middle of That
+    <input class="read" type="radio" name="read" value="No"> No
+    </label>
+    </label>
+    <label for="keep">Keep?
+    <input class="keep" type="radio" name="keep" value="Yes"> Yes
+    <input class="keep" type="radio" name="keep" value="No"> No
+  </label>
+    <label ng-hide='no' for="no">Donate Or Sell?
+      <input class="donate" type="radio" name="donate" value="Donate"> Donate
+      <input class="sell" type="radio" name="sell" value="Sell"> Sell
+  </label>
+</form>
+<!-- TODO: All bookshelf -->
+<!-- http://www.codeply.com/go/6k217BPv6M -->
+<div class="container">
+    <div class="row">
+        <div>
+          <a href=""><img src="http://placehold.it/150x190/e8117f/fff&amp;text=Book%20Title" class="img-responsive book"></a>
+       	</div>
+    </div>
+</div>
+<ui-view></ui-view> <!-- TODO: show page partial -->
