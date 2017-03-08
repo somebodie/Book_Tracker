@@ -61,9 +61,11 @@ angular.module('BookTracker')
   function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     var self = this;
+    GiveAway = false;
 
     function newBook() {
       console.log('THIS IS A NEW BOOK ROUTE!');
+      GiveAway = true;
     }
 
     self.newBook = newBook;
