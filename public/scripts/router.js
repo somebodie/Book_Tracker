@@ -5,7 +5,7 @@ angular.module('BookTracker', ['ui.router'])
 
 function MainRouter($stateProvider, $urlRouterProvider){
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 
   $stateProvider
   .state('index', {

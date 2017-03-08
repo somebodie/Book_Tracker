@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 var BookSchema = new Schema({
-        // isbin: Number,
+        // isbn: Number,
         title: String,
         author: String,
         genre: String,
