@@ -16,8 +16,8 @@ function MainRouter($stateProvider, $urlRouterProvider){
     url: '/library',
     templateUrl: '/partials/library.html'
   })
-  .state('bookshelves', {
-    url: '/bookshelves',
+  .state('books', {
+    url: '/books',
     templateUrl: '/partials/bookshelves.html'
   })
 }
