@@ -21,11 +21,42 @@
               <li ui-sref='about'>About The App</li>
               <li ui-sref='library'>Library</li>
               <li ui-sref='books'>Booksheleves</li>
+              <li onclick="document.getElementById('id01').style.display='block'">Sign Up</li>
+              <li>Login</li>
+              <li>Logout</li>
               <li><a href="https://github.com/somebodie">About The Developer</a></li>
           </ul>
       </span>
     </nav>
+
   </header>
+  <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp -->
+  <!-- Button to open the modal -->
+<!-- The Modal (contains the Sign Up form) -->
+
+<div id="id01" class="modal" ng-controller='AuthController as auth'>
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content animate" ng-submit='auth.signup(userPass)'>
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Name</b></label>
+      <input type="text" placeholder="What Would You Like to be Called?" name="name" required>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- https://www.w3schools.com/howto/howto_css_login_form.asp -->
+
     <ui-view></ui-view>
   <footer>
     <nav>

@@ -28,7 +28,7 @@ function AuthController($http, $state, $scope, $rootScope) {
     function signup(userPass) {
         $http.post('/users', userPass)
             .then(function(response) {
-                $state.go('login');
+              console.log(response);
             });
     }
 
@@ -65,24 +65,41 @@ function AuthController($http, $state, $scope, $rootScope) {
 function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     var self = this;
+    var books = [];
 
     function newBook() {
-      title = self.title;
-      author = self.author;
-      genre = self.genre;
-      read = self.read;
-      checked = self.checked;
-      console.log('THIS IS A NEW BOOK ROUTE!');
-      console.log(title);
-      console.log(author);
-      console.log(genre);
-      console.log(read);
-      console.log(checked);
-      if (checked) {
-          give = self.give;
-          console.log(give);
+        title = self.title;
+        author = self.author;
+        genre = self.genre;
+        read = self.read;
+        checked = self.checked;
+        console.log('THIS IS A NEW BOOK ROUTE!');
+        console.log(title);
+        console.log(author);
+        console.log(genre);
+        console.log(read);
+        console.log(checked);
+        if (checked) {
+            give = self.give;
+            console.log(give);
         }
-      
+        books.push({
+            title: title
+        })
+        console.log(books);
+        // console.log(userPass);
+        // if (userPass) {
+        //   console.log(userPass);
+        // }
+        // Get the modal
+        var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     }
 
     self.newBook = newBook;
