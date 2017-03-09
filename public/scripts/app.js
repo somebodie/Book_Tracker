@@ -80,7 +80,7 @@ function AuthController($http, $state, $scope, $rootScope) {
 function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     var self = this;
-    var books = [];
+    self.lit = [];
 
     function newBook() {
 
@@ -101,22 +101,15 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
         // console.log(genre);
         // console.log(read);
         // console.log(checked);
-      books.push({
+      self.lit.push({
             title: title, author: author, genre: genre, read: read, giveAway: checked, away: give
         })
-        // console.log(books);
-
-        // console.log(userPass);
-        // if (userPass) {
-        //   console.log(userPass);
-        // }
-        showBooks();
+        console.log(self.lit);
     }
 
     function showBooks() {
-      console.log(books);
-
-    }
+      console.log('Showing books!');
+      }
 
     function saveBooks() {
       console.log('Saving books!');

@@ -6,7 +6,7 @@
 http://ionicframework.com/html5-input-types/#overview
  -->
 <!-- TODO: Add form to back end -->
-<form class="add" ng-submit='book.newBook()' method="post">
+<form class="add" ng-submit='book.newBook()'>
     <label for="title">Title:</label>
     <input type="text" name="title" ng-model='book.title' placeholder="Cat in The Hat" required>
     <label for="author">Author:</label>
@@ -15,11 +15,11 @@ http://ionicframework.com/html5-input-types/#overview
     <input type="text" name="genre" ng-model='book.genre' placeholder="Children" required>
     Have you read {{book.title}} yet?
     <label for="yes">Yes:</label>
-    <input id="yes" type="radio" value="yes" ng-model="book.read" name="status" required>
+    <input id="yes" type="radio" value="Yes" ng-model="book.read" name="status" required>
     <label for="mb">In the Middle of That:</label>
-    <input id="mb" type="radio" value="mb" ng-model="book.read" name="status" required>
+    <input id="mb" type="radio" value="Currently" ng-model="book.read" name="status" required>
     <label for="no">No:</label>
-    <input id="no" type="radio" value="no" ng-model="book.read" name="status" required>
+    <input id="no" type="radio" value="No" ng-model="book.read" name="status" required>
     </label>
     </label>
     <label for="keep">Would you like to give this away?
@@ -27,15 +27,19 @@ http://ionicframework.com/html5-input-types/#overview
     <!-- https://docs.angularjs.org/api/ng/directive/ngHide -->
     </label>
     <label class="check-element funky-show-hide" ng-show="book.checked">
-        <input class="donate" type="radio" ng-model='book.give' value="Donate"> Donate
-        <input class="sell" type="radio" ng-model='book.give' value="Sell"> Sell
+      <label for="donate">Donate:</label>
+        <input id="donate" type="radio" ng-model='book.give' value="Donate">
+      <label for="sell">Sell:</label>
+        <input id="sell" type="radio" ng-model='book.give' value="Sell">
     </label>
     <input type="submit" name="submit" value="Add That Book">
 </form>
 
-<ui-view></ui-view>
-<!-- TODO: show page partial state books-->
-
-<div ng-repeat="titles in books">
-<input type="text" ng-model='titles.title'>
-</div> current scope: {{titles.title}}
+<h1>Book Shelf</h1>
+<dl ng-repeat='item in book.lit' style="list-style-type:square">
+  <dt>Title: {{item.title}}</dt>
+  <dd>Author: {{item.author}}</dd>
+  <dd>Genre: {{item.genre}}</dd>
+  <dd>Read: {{item.read}}</dd>
+  <dd>Plans: {{item.away}}</dd>
+</dl>
