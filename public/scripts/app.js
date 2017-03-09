@@ -37,7 +37,7 @@ function AuthController($http, $state, $scope, $rootScope) {
             .then(function(response) {
                 $scope.$emit('userLoggedIn', response.data.data);
                 $rootScope.$emit('fetchData', response.data.data);
-                $state.go('books' 
+                $state.go('books'
                 );
             });
     }
@@ -47,6 +47,26 @@ function AuthController($http, $state, $scope, $rootScope) {
             .then(function(response) {
                 $scope.$emit('userLoggedOut');
             });
+    }
+
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Get the modal
+    var modal = document.getElementById('id02');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
 
     self.signup = signup;
@@ -63,39 +83,55 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
     var books = [];
 
     function newBook() {
+
         title = self.title;
         author = self.author;
         genre = self.genre;
         read = self.read;
         checked = self.checked;
-        console.log('THIS IS A NEW BOOK ROUTE!');
-        console.log(title);
-        console.log(author);
-        console.log(genre);
-        console.log(read);
-        console.log(checked);
         if (checked) {
             give = self.give;
-            console.log(give);
+            // console.log(give);
+        } else {
+          give = 'Keeping'
         }
-        books.push({
-            title: title
+        // console.log('THIS IS A NEW BOOK ROUTE!');
+        // console.log(title);
+        // console.log(author);
+        // console.log(genre);
+        // console.log(read);
+        // console.log(checked);
+      books.push({
+            title: title, author: author, genre: genre, read: read, giveAway: checked, away: give
         })
-        console.log(books);
+        // console.log(books);
+
         // console.log(userPass);
         // if (userPass) {
         //   console.log(userPass);
         // }
-        // Get the modal
-        var modal = document.getElementById('id01');
+        showBooks();
+    }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+    function showBooks() {
+      console.log(books);
+
+    }
+
+    function saveBooks() {
+      console.log('Saving books!');
+
+    }
+
+    function updatedBooks() {
+      console.log('Update Book');
+    }
+
+    function deleteBooks() {
+      console.log('Delete Book');
     }
 
     self.newBook = newBook;
+    self.showBooks = showBooks;
+    self.saveBooks = saveBooks;
 }
