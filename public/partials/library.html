@@ -13,19 +13,19 @@ http://ionicframework.com/html5-input-types/#overview
     <input type="text" name="author" ng-model='book.author' placeholder="Dr.Seuss">
     <label for="genre">Genre:</label>
     <input type="text" name="genre" ng-model='book.genre' placeholder="Children">
-    <label for="read">Read?
-    <input class="read" type="radio" name="read" value="Yes"> Yes
-    <input class="read" type="radio" name="read" value="Middle"> In the Middle of That
-    <input class="read" type="radio" name="read" value="No"> No
+    <label for="read"> Have you read {{book.title}} yet?
+    <input class="read" type="radio" value="Yes" ng-model="book.read"> Yes
+    <input class="read" type="radio" value="Middle" ng-model="book.read"> In the Middle of That
+    <input class="read" type="radio" value="No" ng-model="book.read"> No
     </label>
     </label>
-    <label for="keep">Keep?
-    <input class="keep" type="checkbox" ng-model="checked" aria-label="Toggle ngHide">
+    <label for="keep">Would you like to give this away?
+    <input class="keep" type="checkbox" ng-model="book.checked" aria-label="Toggle ngHide">
+    <!-- https://docs.angularjs.org/api/ng/directive/ngHide -->
     </label>
-    <label class="GiveAway" class="check-element funky-show-hide" ng-show="checked">
-      Donate Or Sell?
-        <input class="donate" type="radio" name="donate" value="Donate"> Donate
-        <input class="sell" type="radio" name="sell" value="Sell"> Sell
+    <label class="check-element funky-show-hide" ng-show="book.checked">
+        <input class="donate" type="radio" ng-model='book.give' value="Donate"> Donate
+        <input class="sell" type="radio" ng-model='book.give' value="Sell"> Sell
     </label>
     <input type="submit" name="submit" value="Add That Book">
 </form>
