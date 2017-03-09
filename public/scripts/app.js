@@ -37,10 +37,8 @@ function AuthController($http, $state, $scope, $rootScope) {
             .then(function(response) {
                 $scope.$emit('userLoggedIn', response.data.data);
                 $rootScope.$emit('fetchData', response.data.data);
-                getAllUsers();
-                $state.go('index', {
-                    reload: true
-                });
+                $state.go('books' 
+                );
             });
     }
 
@@ -48,9 +46,6 @@ function AuthController($http, $state, $scope, $rootScope) {
         $http.delete('/sessions')
             .then(function(response) {
                 $scope.$emit('userLoggedOut');
-                $state.go('index', {
-                    reload: true
-                });
             });
     }
 

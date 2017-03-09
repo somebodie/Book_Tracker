@@ -25,6 +25,7 @@ function MainRouter($stateProvider, $urlRouterProvider){
   .state('books', {
     url: '/books',
     templateUrl: '/partials/bookshelves.html',
-    controller: 'BookController as book'
+    controller: 'BookController as book',
+    parent: 'library'
   })
 }
