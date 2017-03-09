@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.15.2",
     "bcrypt": "^1.0.2",
+    "express": "^4.15.2",
     "express-session": "^1.15.0",
-    "mongoose": "^4.7.7",
+    "mongoose": "^4.8.6",
     "morgan": "^1.7.0"
   },
   "devDependencies": {},
