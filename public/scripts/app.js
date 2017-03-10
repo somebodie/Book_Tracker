@@ -116,7 +116,8 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
         console.log('Showing books!');
         $http.get('/books').then(function(response) {
             console.log(response);
-          self.allBooks = response.data._id;
+          self.allBooks = response.data;
+          console.log(self.allBooks);
         })
     }
 
@@ -131,7 +132,7 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     function updateBook() {
         console.log('Update Book');
-        $http.post('/:id')
+        $http.patch('/books/:id')
         .then(function (response) {
           console.log(response);
         })
@@ -139,7 +140,7 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     function deleteBook() {
         console.log('Delete Book');
-        $http.delete('/books')
+        $http.delete('/books/id')
         .then(function (response) {
           console.log(response);
         })

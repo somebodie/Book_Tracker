@@ -38,7 +38,7 @@ router.get('/:id', function(req, res) {
 router.post('/', function(req, res) {
     console.log("POST ROUTE ACCESSED YAAAAAY");
 
-    Book.findByIdAndUpdate(req.params.id).exec(function(err, book) {
+    Book.findById(req.params.id).exec(function(err, book) {
       console.log(book);
         var newBook = new Book({
           // isbn: Number,
@@ -61,21 +61,21 @@ router.post('/', function(req, res) {
 
 
 // Book EDIT/UPDATE page
-router.patch('/:id/edit', function(req, res) {
-    Book.findById(req.params.id, req.body).exec(function(err, book) {
-        if (err) {
-            console.log(err)
-        }
-        book : {
-        title: title,
-        author: author,
-        genre: genre,
-        read: read,
-        giveAway: checked,
-        away: give
-      }
-    });
-});
+// router.get('/:id/edit', function(req, res) {
+//     Book.findById(req.params.id, req.body).exec(function(err, book) {
+//         if (err) {
+//             console.log(err)
+//         }
+//         book : {
+//         title: title,
+//         author: author,
+//         genre: genre,
+//         read: read,
+//         giveAway: checked,
+//         away: give
+//       }
+//     });
+// });
 
 
 router.patch('/:id', function(req, res) {
