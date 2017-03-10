@@ -114,7 +114,7 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     function showBooks() {
         console.log('Showing books!');
-        $http.get('/books', function(response) {
+        $http.get('/books').then(function(response) {
             console.log(response);
         })
     }

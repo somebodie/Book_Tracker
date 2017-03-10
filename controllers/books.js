@@ -52,7 +52,7 @@ router.post('/', function(req, res) {
           }
         });
         newBook.save(function(err, book) {
-            console.log("FEEDBACK SAVED YAY", book);
+            console.log("BOOK SAVED YAY", book);
             res.json(book)
         });
     });
