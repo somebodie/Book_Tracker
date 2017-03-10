@@ -25,20 +25,21 @@ router.get('/', function(req, res) {
 // });
 
 // Book show page
-// router.get('/:id', function(req, res) {
-//     Book.findById(req.params.id).exec(function(err, book) {
-//         if (err) {
-//             console.log(err)
-//         }
-//
-//     });
-// });
+router.get('/:id', function(req, res) {
+    Book.findById(req.params.id).exec(function(err, book) {
+        if (err) {
+            console.log(err)
+        }
+        res.json(book)
+    });
+});
 
 // Book Create/save
 router.post('/', function(req, res) {
     console.log("POST ROUTE ACCESSED YAAAAAY");
 
     Book.findById(req.params.id).exec(function(err, book) {
+      console.log(book);
         var newBook = new Book({
           // isbn: Number,
           title: req.body.title,
@@ -61,17 +62,17 @@ router.post('/', function(req, res) {
 
 // Book EDIT/UPDATE page
 // router.get('/:id/edit', function(req, res) {
-//     Book.findById(req.params.id).exec(function(err, book) {
+//     Book.findById(req.params.id, req.body).exec(function(err, book) {
 //         if (err) {
 //             console.log(err)
 //         }
-//         book : {
-//         title: title,
-//         author: author,
-//         genre: genre,
-//         read: read,
-//         giveAway: checked,
-//         away: give
+        // book : {
+        // title: title,
+        // author: author,
+        // genre: genre,
+        // read: read,
+        // giveAway: checked,
+        // away: give
 //       }
 //     });
 // });
@@ -90,9 +91,9 @@ router.patch('/:id', function(req, res) {
 });
 
 // delete page
-// FIXME: render not going to right place
 router.delete('/:id', function(req, res) {
     Book.findByIdAndRemove(req.params.id).exec(function(err, book) {
+      console.log('Book has been deleted!');
         if (err) {
             console.log(err);
         }
