@@ -93,7 +93,7 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
             give = self.give;
             // console.log(give);
         } else {
-          give = 'Keeping'
+            give = 'Keeping'
         }
         // console.log('THIS IS A NEW BOOK ROUTE!');
         // console.log(title);
@@ -101,35 +101,52 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
         // console.log(genre);
         // console.log(read);
         // console.log(checked);
-      self.lit.push({
-            title: title, author: author, genre: genre, read: read, giveAway: checked, away: give
+        self.lit.push({
+            title: title,
+            author: author,
+            genre: genre,
+            read: read,
+            giveAway: checked,
+            away: give
         })
         console.log(self.lit);
     }
 
     function showBooks() {
-      console.log('Showing books!');
-      $http.get('/books', function (response) {
-        console.log(response);
+        console.log('Showing books!');
+        $http.get('/books', function(response) {
+            console.log(response);
         })
-      }
+    }
 
     function saveBook() {
-      console.log('Saving books!');
-
+        console.log('Saving books!');
+        $http.post('/books', self.lit)
+        .then(function(response) {
+          console.log(response);
+          console.log(self.lit);
+        })
     }
 
-    function updateBooks() {
-      console.log('Update Book');
+    function updateBook(book_id) {
+        console.log('Update Book');
+        $http.post(`/${book_id}`)
+        .then(function (response) {
+          console.log(response);
+        })
     }
 
-    function deleteBooks() {
-      console.log('Delete Book');
+    function deleteBook() {
+        console.log('Delete Book');
+        $http.delete('/books')
+        .then(function (response) {
+          console.log(response);
+        })
     }
 
     self.newBook = newBook;
     self.showBooks = showBooks;
-    self.saveBooks = saveBooks;
-    self.updatedBooks = updatedBooks;
-    self.deleteBooks = deleteBooks;
+    self.saveBook = saveBook;
+    self.updateBook = updateBook;
+    self.deleteBook = deleteBook;
 }

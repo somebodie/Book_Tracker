@@ -1,27 +1,22 @@
-var express        = require('express');
-var session        = require('express-session');
-var logger         = require('morgan');
-var mongoose       = require('mongoose');
+var express = require('express');
+var logger = require('morgan');
+var bodyParser = require('body-parser');
+var app = express();
 
+var mongoose = require('mongoose');
 
 var BooksController = require('./controllers/Books.js');
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 
-var app = express();
-
-app.use(express.static('public'))
-
 var mongoURI = process.env.MONGODB_URI ||'mongodb://localhost/Book_Tracker'
 mongoose.connect(mongoURI);
 
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(session({
-  secret: "derpderpderpcats",
-  resave: true,
-  saveUninitialized: false
-}));
+app.use(express.static('public'))
 
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);

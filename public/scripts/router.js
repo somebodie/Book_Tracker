@@ -11,7 +11,7 @@ function MainRouter($stateProvider, $urlRouterProvider){
   .state('index', {
     url: '/home',
     templateUrl: '/partials/home.html',
-    controller: 'HomeController as home'
+    // controller: 'HomeController as home'
   })
   .state('about', {
     url: '/about',

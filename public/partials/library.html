@@ -13,7 +13,7 @@ http://ionicframework.com/html5-input-types/#overview
     <input type="text" name="author" ng-model='book.author' placeholder="Dr.Seuss" required>
     <label for="genre">Genre:</label>
     <input type="text" name="genre" ng-model='book.genre' placeholder="Children" required>
-    Have you read {{book.title}} yet?
+    Have you read it yet?
     <label for="yes">Yes:</label>
     <input id="yes" type="radio" value="Yes" ng-model="book.read" name="status" required>
     <label for="mb">In the Middle of That:</label>
@@ -45,6 +45,7 @@ http://ionicframework.com/html5-input-types/#overview
   <button type="button" name="button" ng-click='book.saveBook()'>Save</button>
   <button type="button" name="button" ng-click='book.updateBooks()'>Update</button>
   <button type="button" name="button" ng-click='book.deleteBooks()'>Delete</button>
+  <button type="button" name="button" ng-click='book.showBooks()'>Show</button>
 </dl>
 
 <ui-view></ui-view>
