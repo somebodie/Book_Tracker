@@ -10,18 +10,19 @@ var mongoose = require('mongoose');
 // routes for /books
 // Book index page
 router.get('/', function(req, res) {
-Book.find({}).exec(function(err, book) {
+Book.find({}).exec(function(err, books) {
     if (err) {
         console.log(err)
     }
+    res.json(books)
 });
 });
 
 
-// Book new post
-router.get('/new', function(req, res) {
-
-});
+// // Add Book
+// router.get('/new', function(req, res) {
+//
+// });
 
 // Book show page
 router.get('/:id', function(req, res) {

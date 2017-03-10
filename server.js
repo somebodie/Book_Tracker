@@ -23,7 +23,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
-app.use('/books/users/:id', usersController);
+app.use('/users', usersController);
 app.use('/sessions', sessionsController);
 app.use('/books', BooksController);
 
