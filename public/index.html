@@ -17,7 +17,7 @@
       <h1 ui-sref='index'>Beauty, Beast, and Books</h1>
       <span>
         <h3>Contents</h3>
-          <ul ng-controller='AuthController as auth'>
+          <ul>
               <li ui-sref='about'>About The App</li>
               <li ui-sref='library'>Library</li>
               <li ui-sref='books'>Booksheleves</li>
@@ -34,7 +34,7 @@
   <!-- Button to open the modal -->
 <!-- The Modal (contains the Sign Up form) -->
 
-<div id="id01" class="modal" ng-controller='AuthController as auth'>
+<div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
   <form class="modal-content animate" ng-submit='auth.signup(userPass)'>
     <div class="container">
@@ -57,7 +57,7 @@
 
 <!-- https://www.w3schools.com/howto/howto_css_login_form.asp -->
 
-<div id="id02" class="modal" ng-controller='AuthController as auth'>
+<div id="id02" class="modal">
 
   <form class="modal-content animate" action="/action_page.php" ng-submit='auth.login(userPass)'>
 
