@@ -13,9 +13,8 @@
 
 <body>
   <header>
-    <nav>
-      <h1 ui-sref='index'>Beauty, Beast, and Books</h1>
-      <span>
+    <h1 ui-sref='index'>Beauty, Beast, and Books</h1>
+    <nav role="full-horizontal">
         <h3>Contents</h3>
           <ul>
               <li ui-sref='about'>About The App</li>
@@ -26,7 +25,6 @@
               <li ng-click='auth.logout()'>Logout</li> -->
               <li><a href="https://github.com/somebodie">About The Developer</a></li>
           </ul>
-      </span>
     </nav>
 
   </header>
@@ -77,7 +75,9 @@
   </form>
 </div> -->
 
+<div class="parallax-window" data-parallax="scroll" data-image-src="/images/114fda3f6b58894ffff1d981195a79fb.jpg">
     <ui-view></ui-view>
+</div>
   <footer>
     <nav>
       <span>S0M3B0DI3</span>
