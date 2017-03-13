@@ -143,8 +143,8 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
         $http.delete('/books/id')
         .then(function (response) {
           console.log(response);
+          self.allBooks;
         })
-      showBooks();
     }
 
     self.newBook = newBook;

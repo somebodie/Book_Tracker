@@ -6,6 +6,7 @@
 http://ionicframework.com/html5-input-types/#overview
  -->
 <!-- TODO: Add form to back end -->
+<div>
 <form class="add" ng-submit='book.newBook()'>
     <label for="title">Title:</label>
     <input type="text" name="title" ng-model='book.title' placeholder="Cat in The Hat" required>
@@ -34,9 +35,10 @@ http://ionicframework.com/html5-input-types/#overview
     </label>
     <input type="submit" name="submit" value="Add That Book">
 </form>
+</div>
 
+<div>
 <h1>Book Cart</h1>
-
 <dl ng-repeat='item in book.lit' style="list-style-type:square" ui-sref='books'>
   <dt>Title: {{item.title}}</dt>
   <dd>Author: {{item.author}}</dd>
@@ -47,5 +49,8 @@ http://ionicframework.com/html5-input-types/#overview
   <button type="button" name="button" ng-click='book.deleteBook()'>Delete</button>
   <button type="button" name="button" ng-click='book.updateBook()'>Update</button>
 </dl>
+</div>
 
+<div>
 <ui-view></ui-view>
+</div>

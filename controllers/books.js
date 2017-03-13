@@ -37,9 +37,8 @@ router.get('/:id', function(req, res) {
 // Book Create/save
 router.post('/', function(req, res) {
     console.log("POST ROUTE ACCESSED YAAAAAY");
-
-    Book.findById(req.params.id).exec(function(err, book) {
-      console.log(book);
+    // Book.findById(req.params.id).exec(function(err, book) {
+    //   console.log(book);
         var newBook = new Book({
           // isbn: Number,
           title: req.body.title,
@@ -47,16 +46,14 @@ router.post('/', function(req, res) {
           genre: req.body.genre,
           read: req.body.read,
           keep: req.body.keep,
-          away: {
-            donate: req.body.donate,
-            sell: req.body.sell
-          }
+          giveAway: req.body.giveAway,
+          away: req.body.away
         });
         newBook.save(function(err, book) {
             console.log("BOOK SAVED YAY", book);
             res.json(book)
         });
-    });
+    // });
 });
 
 

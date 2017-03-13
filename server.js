@@ -9,6 +9,11 @@ var BooksController = require('./controllers/Books.js');
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 
+// require('yahoocss')
+require(['skrollr'], function(skrollr){
+    var s = skrollr.init();
+});
+
 var mongoURI = process.env.MONGODB_URI ||'mongodb://localhost/Book_Tracker'
 mongoose.connect(mongoURI);
 
