@@ -10,10 +10,10 @@ var BookSchema = new Schema({
         genre: String,
         read: String,
         keep: Boolean,
-        away: {
-          donate: String,
-          sell: String
-        }
+        // away: {
+        //   donate: String,
+        //   sell: String
+        // }
 });
 
 var UserSchema = new Schema({

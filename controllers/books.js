@@ -47,8 +47,8 @@ router.post('/', function(req, res) {
           genre: req.body.genre,
           read: req.body.read,
           keep: req.body.keep,
-          giveAway: req.body.giveAway,
-          away: req.body.away
+          // giveAway: req.body.giveAway,
+          // away: req.body.away
         });
         newBook.save(function(err, book) {
             console.log("BOOK SAVED YAY", book);

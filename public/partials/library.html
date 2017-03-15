@@ -7,7 +7,7 @@ http://ionicframework.com/html5-input-types/#overview
  -->
 <!-- TODO: Add form to back end -->
 <div>
-<form class="add" ng-submit='book.newBook()'>
+<form class="add" ng-submit='book.saveBook()'>
     <label for="title">Title:</label>
     <input type="text" name="title" ng-model='book.newBook.title' placeholder="Cat in The Hat" required>
     <label for="author">Author:</label>
@@ -26,13 +26,13 @@ http://ionicframework.com/html5-input-types/#overview
     <label for="keep">Would you like to give this away?
     <input class="keep" type="checkbox" ng-model="book.newBook.checked" aria-label="Toggle ngHide">
     <!-- https://docs.angularjs.org/api/ng/directive/ngHide -->
-    </label>
+    <!-- </label>
     <label class="check-element funky-show-hide" ng-show="book.newBook.checked">
       <label for="donate">Donate:</label>
-        <input id="donate" type="radio" ng-model='book.newBook.give' value="Donate">
+        <input id="donate" type="radio" ng-model='book.newBook.giveAway' value="Donate">
       <label for="sell">Sell:</label>
-        <input id="sell" type="radio" ng-model='book.newBook.give' value="Sell">
-    </label>
+        <input id="sell" type="radio" ng-model='book.newBook.giveAway' value="Sell">
+    </label> -->
     <input type="submit" name="submit" value="Add That Book">
 </form>
 </div>

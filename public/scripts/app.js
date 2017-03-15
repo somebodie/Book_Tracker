@@ -80,37 +80,37 @@ angular.module('BookTracker')
 function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     var self = this;
-    self.lit = [];
+    self.newBook = {};
 
-    function newBook() {
-
-        title = self.title;
-        author = self.author;
-        genre = self.genre;
-        read = self.read;
-        checked = self.checked;
-        if (checked) {
-            give = self.give;
-            // console.log(give);
-        } else {
-            give = 'Keeping'
-        }
-        // console.log('THIS IS A NEW BOOK ROUTE!');
-        // console.log(title);
-        // console.log(author);
-        // console.log(genre);
-        // console.log(read);
-        // console.log(checked);
-        self.lit.push({
-            title: title,
-            author: author,
-            genre: genre,
-            read: read,
-            giveAway: checked,
-            away: give
-        })
-        console.log(self.lit);
-    }
+    // function newBook() {
+    //
+    //     title = self.newBook.title;
+    //     author = self.newBook.author;
+    //     genre = self.genre;
+    //     read = self.read;
+    //     checked = self.checked;
+    //     if (checked) {
+    //         give = self.give;
+    //         // console.log(give);
+    //     } else {
+    //         give = 'Keeping'
+    //     }
+    //     // console.log('THIS IS A NEW BOOK ROUTE!');
+    //     // console.log(title);
+    //     // console.log(author);
+    //     // console.log(genre);
+    //     // console.log(read);
+    //     // console.log(checked);
+    //     self.lit.push({
+    //         title: title,
+    //         author: author,
+    //         genre: genre,
+    //         read: read,
+    //         giveAway: checked,
+    //         away: give
+    //     })
+    //     console.log(self.lit);
+    // }
 
     function showBooks() {
         console.log('Showing books!');
@@ -123,10 +123,10 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     function saveBook() {
         console.log('Saving books!');
-        $http.post('/books', self.lit)
+        $http.post('/books', self.newBook)
         .then(function(response) {
           console.log(response);
-          console.log(self.lit);
+          console.log(self.newBook);
         })
     }
 
@@ -147,7 +147,7 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
         })
     }
 
-    self.newBook = newBook;
+    // self.newBook = newBook;
     self.showBooks = showBooks;
     self.saveBook = saveBook;
     self.updateBook = updateBook;
