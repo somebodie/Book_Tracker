@@ -36,6 +36,7 @@ router.get('/:id', function(req, res) {
 
 // Book Create/save
 router.post('/', function(req, res) {
+  console.log(req);
     console.log("POST ROUTE ACCESSED YAAAAAY");
     // Book.findById(req.params.id).exec(function(err, book) {
     //   console.log(book);

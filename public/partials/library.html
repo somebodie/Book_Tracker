@@ -9,29 +9,29 @@ http://ionicframework.com/html5-input-types/#overview
 <div>
 <form class="add" ng-submit='book.newBook()'>
     <label for="title">Title:</label>
-    <input type="text" name="title" ng-model='book.title' placeholder="Cat in The Hat" required>
+    <input type="text" name="title" ng-model='book.newBook.title' placeholder="Cat in The Hat" required>
     <label for="author">Author:</label>
-    <input type="text" name="author" ng-model='book.author' placeholder="Dr.Seuss" required>
+    <input type="text" name="author" ng-model='book.newBook.author' placeholder="Dr.Seuss" required>
     <label for="genre">Genre:</label>
-    <input type="text" name="genre" ng-model='book.genre' placeholder="Children" required>
+    <input type="text" name="genre" ng-model='book.newBook.genre' placeholder="Children" required>
     Have you read it yet?
     <label for="yes">Yes:</label>
-    <input id="yes" type="radio" value="Yes" ng-model="book.read" name="status" required>
+    <input id="yes" type="radio" value="Yes" ng-model="book.newBook.read" name="status" required>
     <label for="mb">In the Middle of That:</label>
-    <input id="mb" type="radio" value="Currently" ng-model="book.read" name="status" required>
+    <input id="mb" type="radio" value="Currently" ng-model="book.newBook.read" name="status" required>
     <label for="no">No:</label>
-    <input id="no" type="radio" value="No" ng-model="book.read" name="status" required>
+    <input id="no" type="radio" value="No" ng-model="book.newBook.read" name="status" required>
     </label>
     </label>
     <label for="keep">Would you like to give this away?
-    <input class="keep" type="checkbox" ng-model="book.checked" aria-label="Toggle ngHide">
+    <input class="keep" type="checkbox" ng-model="book.newBook.checked" aria-label="Toggle ngHide">
     <!-- https://docs.angularjs.org/api/ng/directive/ngHide -->
     </label>
-    <label class="check-element funky-show-hide" ng-show="book.checked">
+    <label class="check-element funky-show-hide" ng-show="book.newBook.checked">
       <label for="donate">Donate:</label>
-        <input id="donate" type="radio" ng-model='book.give' value="Donate">
+        <input id="donate" type="radio" ng-model='book.newBook.give' value="Donate">
       <label for="sell">Sell:</label>
-        <input id="sell" type="radio" ng-model='book.give' value="Sell">
+        <input id="sell" type="radio" ng-model='book.newBook.give' value="Sell">
     </label>
     <input type="submit" name="submit" value="Add That Book">
 </form>
