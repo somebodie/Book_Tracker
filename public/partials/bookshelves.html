@@ -1,3 +1,38 @@
-<h1>Book Cart</h1>
+<h1>Book Shelf</h1>
 
-<!-- API -->
+<!-- Reach Goal: Search
+<label class="item item-input">
+  <i class="icon ion-search placeholder-icon"></i>
+  <input type="search" placeholder="Search">
+</label>
+http://ionicframework.com/html5-input-types/#overview
+ -->
+<!-- TODO: Add form to back end -->
+<div>
+    <form class="add" ng-submit='book.saveBook()'>
+        <label for="title">Title:</label>
+        <input type="text" name="title" ng-model='book.newBook.title' placeholder="Cat in The Hat" required>
+        <label for="author">Author:</label>
+        <input type="text" name="author" ng-model='book.newBook.author' placeholder="Dr.Seuss" required>
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" ng-model='book.newBook.genre' placeholder="Children" required> Have you read it yet?
+        <label for="yes">Yes:</label>
+        <input id="yes" type="radio" value="Yes" ng-model="book.newBook.read" name="status" required>
+        <label for="mb">In the Middle of That:</label>
+        <input id="mb" type="radio" value="Currently" ng-model="book.newBook.read" name="status" required>
+        <label for="no">No:</label>
+        <input id="no" type="radio" value="No" ng-model="book.newBook.read" name="status" required>
+        <input type="submit" name="submit" value="Add That Book">
+    </form>
+</div>
+
+<div class="libray">
+    <dl ng-repeat='item in book.allBooks'>
+        <dt>Title: {{item.title}}</dt>
+        <dd>Author: {{item.author}}</dd>
+        <dd>Genre: {{item.genre}}</dd>
+        <dd>Status: {{item.read}}</dd>
+        <button type="button" name="button" ng-click='book.deleteBook(item)'>Delete</button>
+        <button type="button" name="button" ng-click='book.updateBook(item)'>Update</button>
+    </dl>
+</div>

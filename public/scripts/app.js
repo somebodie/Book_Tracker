@@ -29,19 +29,20 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     function updateBook(book) {
         console.log('Update Book');
+        console.log(book);
         $http.patch(`/books/${book.id}`)
             .then(function(response) {
                 console.log(response);
             })
     }
 
-    function deleteBook() {
+    function deleteBook(book) {
         console.log('Delete Book');
+        console.log(book);
         $http.delete(`/books/${book.id}`)
             .then(function(response) {
                 console.log(response);
             })
-        // showBooks();
     }
 
     showBooks();
