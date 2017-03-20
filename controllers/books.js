@@ -64,7 +64,7 @@ router.post('/', function(req, res) {
 //     });
 // });
 
-
+// Book Update
 router.patch('/:id', function(req, res) {
     Book.findByIdAndUpdate(req.params.id, req.body, {
             new: true
@@ -79,7 +79,8 @@ router.patch('/:id', function(req, res) {
 
 // delete page
 router.delete('/:id', function(req, res) {
-    Book.findByIdAndRemove(req.params.id).exec(function(err, book) {
+    Book.findByIdAndRemove(req.params.id)
+    .exec(function(err, book) {
       console.log('Book has been deleted!');
         if (err) {
             console.log(err);
