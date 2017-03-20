@@ -5,7 +5,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 
-var BooksController = require('./controllers/Books.js');
+var BooksController = require('./controllers/books.js');
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
 
