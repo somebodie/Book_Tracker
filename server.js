@@ -20,7 +20,7 @@ app.use(express.static('public'))
 
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
-app.use('/books', booksController);
+app.use('/books', BooksController);
 
 app.listen(process.env.PORT || 3000, function() {
   console.log('***BOOKING IT TO 3000****');
