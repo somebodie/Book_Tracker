@@ -1,25 +1,27 @@
 var express = require('express');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
-var app = express();
-
 var mongoose = require('mongoose');
 
 var BooksController = require('./controllers/books.js');
-var usersController = require('./controllers/users.js');
-var sessionsController = require('./controllers/sessions.js');
 
-var mongoURI = process.env.MONGODB_URI ||'mongodb://localhost/Book_Tracker'
+var app = express();
+
+var mongoURI = process.env.MONGODB_URI ||'mongodb://localhost/books'
 mongoose.connect(mongoURI);
-
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'))
 
-app.use('/users', usersController);
-app.use('/sessions', sessionsController);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(logger('dev'));
+
+app.get('/', function(req, res) {
+    res.redirect('/home')
+});
+
 app.use('/books', BooksController);
 
 app.listen(process.env.PORT || 3000, function() {

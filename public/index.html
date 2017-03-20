@@ -12,79 +12,27 @@
 </head>
 
 <body>
-  <header>
-    <h1 ui-sref='index'>Beauty, Beast, and Books</h1>
-    <nav role="full-horizontal">
-        <h3>Contents</h3>
-          <ul>
-              <li ui-sref='about'>About The App</li>
-              <li ui-sref='library'>Library</li>
-              <li ui-sref='books'>Booksheleves</li>
-              <!-- <li onclick="document.getElementById('id01').style.display='block'">Sign Up</li>
-              <li onclick="document.getElementById('id02').style.display='block'">Login</li>
-              <li ng-click='auth.logout()'>Logout</li> -->
-              <li><a href="https://github.com/somebodie">About The Developer</a></li>
-          </ul>
-    </nav>
+    <header>
+        <h1 ui-sref='index'>Books, Books, and More Books</h1>
+        <nav>
+            <h3>Contents</h3>
+            <ul>
+                <li ui-sref='about'>About The App</li>
+                <li ui-sref='library'>Library</li>
+                <li ui-sref='books'>Booksheleves</li>
+                <li><a href="https://github.com/somebodie">About The Developer</a></li>
+            </ul>
+        </nav>
 
-  </header>
-  <!-- https://www.w3schools.com/howto/howto_css_signup_form.asp -->
-  <!-- Button to open the modal -->
-<!-- The Modal (contains the Sign Up form) -->
+    </header>
 
-<!-- <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content animate" ng-submit='auth.signup(userPass)'>
-    <div class="container">
-      <label><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <label><b>Name</b></label>
-      <input type="text" placeholder="What Would You Like to be Called?" name="name" required>
-
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
-      </div>
-    </div>
-  </form>
-</div> -->
-
-<!-- https://www.w3schools.com/howto/howto_css_login_form.asp -->
-
-<!-- <div id="id02" class="modal">
-
-  <form class="modal-content animate" action="/action_page.php" ng-submit='auth.login(userPass)'>
-
-    <div class="container">
-      <label><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-    </div>
-  </form>
-</div> -->
-
-<div class="parallax-window" data-parallax="scroll" data-image-src="/images/114fda3f6b58894ffff1d981195a79fb.jpg">
     <ui-view></ui-view>
-</div>
-  <footer>
-    <nav>
-      <span>S0M3B0DI3</span>
-    </nav>
-  </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="/scripts/parallax.js"></script>
+
+    <footer>
+        <nav>
+            <span>Audrey Redman</span>
+        </nav>
+    </footer>
 </body>
 
 </html>
