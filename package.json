@@ -20,6 +20,9 @@
     "type": "git",
     "url": "git+https://github.com/somebodie/Book_Tracker.git"
   },
+  "engines": {
+  "node": "6.9.1"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
