@@ -11,31 +11,38 @@
     <script src="/scripts/router.js"></script>
     <script src="/scripts/app.js"></script>
     <script type="text/javascript" src="http://dp.la/info/wp-content/uploads/2013/12/dpla-search-widget.js"></script>
-    <link rel="stylesheet" href="/css/master.css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
 </head>
 
-<body>
-    <header>
-        <h1 ui-sref='index'>Books, Books, and More Books</h1>
-        <nav>
-            <h3>Contents</h3>
-            <ul>
-                <li ui-sref='about'>About The App</li>
-                <li ui-sref='library'>Library</li>
-                <li ui-sref='books'>Booksheleves</li>
-                <li><a href="https://github.com/somebodie">About The Developer</a></li>
-            </ul>
-        </nav>
+<body class="container">
+    <div class="row">
+        <div class="one-half column" style="margin-top: 25%">
+            <header>
+                <h1 ui-sref='index'>Books, Books, and More Books</h1>
+                <nav>
+                    <h3>Contents</h3>
+                    <ul>
+                        <li ui-sref='about'>About The App</li>
+                        <li ui-sref='library'>Library</li>
+                        <li ui-sref='books'>Booksheleves</li>
+                        <li><a href="https://github.com/somebodie">About The Developer</a></li>
+                    </ul>
+                </nav>
 
-    </header>
+            </header>
 
-    <ui-view></ui-view>
+            <ui-view></ui-view>
 
-    <footer>
-        <nav>
-            <span>Audrey Redman</span>
-        </nav>
-    </footer>
+            <footer>
+                <nav>
+                    <span>Audrey Redman</span>
+                </nav>
+            </footer>
+        </div>
+    </div>
 </body>
 
 </html>
