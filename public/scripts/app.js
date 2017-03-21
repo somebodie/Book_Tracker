@@ -8,6 +8,7 @@ function BookController($scope, $http, $state, $stateParams, $rootScope) {
 
     var self = this;
     self.newBook = {};
+    self.update = false;
 
     function showBooks() {
         console.log('Showing books!');
