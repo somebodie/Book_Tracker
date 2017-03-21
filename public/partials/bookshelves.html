@@ -1,4 +1,4 @@
-<h1>Book Shelf</h1>
+<h1 class='thing'> Book Shelf</h1>
 
 <div>
     <form class="add" ng-submit='book.saveBook()'>
@@ -18,7 +18,7 @@
     </form>
 </div>
 
-<div class="libray">
+<div class='thing' >
     <dl ng-repeat='item in book.allBooks'>
         <dt>Title: {{item.title}}</dt>
         <dd>Author: {{item.author}}</dd>
